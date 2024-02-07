@@ -1,0 +1,78 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'Register'
+            on_press: root.go_to_register_screen()
+        Button:
+            text: 'PunchIn'
+            on_press: root.go_to_punchin_screen()
+        Button:
+            text: 'Reports'
+            on_press: root.go_to_reports_screen()
+        Button:
+            text: 'Sync To Cloud'
+            on_press: root.go_to_SynchTocloud_screen()
+
+<RegisterScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 5
+        Image:
+            id:my_image
+        Button:
+            text: 'Capture'
+            on_press: root.capture_photo()
+        
+
+        Label:
+            id:name_label
+            text: 'Name: Unknown'
+            font_size: 20
+
+        TextInput:
+            id: fullname_input
+            hint_text: 'Enter Full Name'
+
+        Spinner:
+            id: role_spinner
+            text: 'Select Role'
+            values: ['Admin', 'Manager', 'User', 'HR']
+
+        TextInput:
+            id: EmpId_input
+            hint_text: 'Enter Employee ID'
+
+        Button:
+            text: 'Register'
+            on_press: root.register()
+        Button:
+            text: 'Back To main'
+            on_press: root.go_to_main_screen()
+
+<PunchinScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 5
+        Image:
+            id:punch_image
+        Label:
+            id:punchname
+            text: 'Name: Unknown'
+            font_size: 20
+        Button:
+            text: 'LogIn'
+            on_press: root.login_with_face()
+        Button:
+            text: 'Download Attendance'
+            on_press: root.Downloadattendance()
+        Button:
+            text: 'Back To main'
+            on_press: root.go_to_main_screen()
+
+<ReportsScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'Go to Main Screen'
+            on_press: root.go_to_main_screen()
